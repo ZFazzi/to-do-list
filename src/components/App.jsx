@@ -5,9 +5,6 @@ import ToDoList from '../pages/ToDoList.jsx';
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/">To-Do List</Link>
-      </nav>
       <Routes>
         <Route path="/" element={<ToDoList />} />
       </Routes>
