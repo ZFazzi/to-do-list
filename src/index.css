@@ -21,6 +21,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+
 }
 h1{
   color: black;
@@ -28,16 +30,19 @@ h1{
   text-align: center;
   margin: 40px;
   font-size: 40px;
+
 }
 
 .container{
-  background-color: white; 
+  background-color: rgb(210, 211, 185); 
   border-radius: 10px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
   padding: 100px;
-  max-width: 400px; 
-  width: 90%; 
+  max-width: 500px; 
+  max-height: 70vh;
+  width: 100%; 
   text-align: center;
+  overflow: hidden;
 }
 
 div {
@@ -47,30 +52,70 @@ div {
 }
 
 input {
-  padding: 5px;
-  margin: 10px 5px;
+  color: black;
+  padding: 7px;
+  background-color: white;
+  margin: 10px 25px;
+  border-radius: 5px;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10;
+}
+
+
+li {
+  font-size: 16px;
+  margin: 5px 0;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #5b928f;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: 2px 2px 10px #ffffff53;
+  padding: 10px; 
+}
+
+.task-content {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+  flex-grow: 1; 
+}
+
+.task-text {
+  word-wrap: break-word; /* Break long words if necessary */
+  flex-grow: 1; 
+  text-align: left;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex; 
+  gap: 5px; 
 }
 
 button {
   margin: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  font-size: 12px;
-  background-color: #0e315c;
+  font-size: 14px;
+  background-color: #01796F;
   border-radius: 5px;
   border-color: transparent;
   box-shadow: 2px 2px 10px #ffffff53;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+button:hover {
+  background-color: #0b5e5e;
 }
 
-li {
-  margin: 5px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+/* Checkbox styling */
+input[type="checkbox"] {
+  width: 20px; 
+  height: 20px;
 }
