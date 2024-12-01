@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-const TodoList = () => {
+function TodoList(){
   const [tasks, setTasks] = useState([]); /*tasks is the intial value, empty array*/ /*setTasks updates tasks*/
   const [newTask, setNewTask] = useState(''); /*newTask stores the input text for new tasks*/ /*setNewTask updates newTask*/
 
-  const addTask = () => {
+  function addTask(){
     if (newTask.trim() !== '') { /*trim removes extra spaces and makes sure you cant add a space as a task*/
       setTasks([...tasks, newTask]); /*setTasks uses the spread operator (...tasks) to keep existing tasks and adds the new one at the end*/
       setNewTask(''); /*clears the input box*/
     }
   };
 
-  const removeTask = (index) => {
+  function removeTask (index) {
     setTasks(tasks.filter((_, i) => i !== index));   /*filter "hides" the deleted task*/
   };
 
-  const moveTaskUp = (index) => {
+  function moveTaskUp (index) {
     if (index > 0) {            /*is the task on top?*/
       const updatedTasks = [...tasks];
       [updatedTasks[index], updatedTasks[index - 1]] = [updatedTasks[index - 1], updatedTasks[index]];  /*swaps position of the tasks*/
@@ -25,14 +25,14 @@ const TodoList = () => {
     }
   };
 
-  const moveTaskDown = (index) => {
+  function moveTaskDown (index) {
     if (index < tasks.length - 1) {  
       const updatedTasks = [...tasks];
       [updatedTasks[index], updatedTasks[index + 1]] = [updatedTasks[index + 1], updatedTasks[index]];
       setTasks(updatedTasks);
     }
   };
-                                                    /*tasks.map loops through the tasks and creates a new <li> for each task*/
+                                                    /*tasks.map creates a new <li> for each task*/
   return (
     
     <div className="background"> 
